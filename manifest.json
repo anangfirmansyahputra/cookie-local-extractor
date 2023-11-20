@@ -1,0 +1,29 @@
+﻿{
+  "name": "Cookie and Local Storage Extractor",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Cookie and Local Storage Extractor is a powerful and user-friendly Chrome extension designed to assist users in extracting and saving cookie and local storage data from the currently browsed web page. With this extension, you can quickly access and store crucial information stored within cookies and local storage on specific websites.",
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "permissions": [
+    "storage",
+    "cookies",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "Cookie Extractor",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
